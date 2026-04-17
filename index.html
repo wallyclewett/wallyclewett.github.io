@@ -60,8 +60,7 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
 @keyframes yodaGlow { 0%,100%{filter:drop-shadow(-8px 0 20px rgba(100,60,255,0.6))} 40%{filter:drop-shadow(-8px 0 35px rgba(255,80,200,0.7))} 70%{filter:drop-shadow(-8px 0 25px rgba(80,200,255,0.6))} }
 
 /* BB8 */
-.bb8 { position:absolute; bottom:-10px; left:clamp(10px,3vw,40px); width:clamp(100px,14vw,180px); z-index:4; animation:bb8Float 7s ease-in-out infinite; }
-@keyframes bb8Float { 0%{transform:translate(0,0) rotate(0deg)} 25%{transform:translate(12px,-15px) rotate(3deg)} 50%{transform:translate(-8px,-25px) rotate(-2deg)} 75%{transform:translate(15px,-10px) rotate(2deg)} 100%{transform:translate(0,0) rotate(0deg)} }
+.bb8 { position:absolute; width:90px; z-index:6; pointer-events:none; }
 .bb8 img { width:100%; animation:bb8Glow 3.5s ease-in-out infinite 0.8s; }
 @keyframes bb8Glow { 0%,100%{filter:drop-shadow(0 0 10px rgba(255,150,50,0.4))} 50%{filter:drop-shadow(0 0 25px rgba(255,180,80,0.8))} }
 
