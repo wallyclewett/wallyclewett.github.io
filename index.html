@@ -70,9 +70,14 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
 
 /* ── HOLOGRAM CONTENT ── */
 .content { position:relative; z-index:5; width:min(960px,90vw); padding:clamp(1.2rem,3vw,2.5rem); text-align:center; }
-.holo-wrap { position:relative; padding:clamp(1rem,2.5vw,2rem); border:1px solid rgba(80,200,255,0.25); border-radius:8px; background:rgba(0,30,60,0.35); backdrop-filter:blur(2px); animation:holoFlicker 8s ease-in-out infinite; }
-.holo-wrap::before { content:''; position:absolute; inset:0; border-radius:8px; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,180,255,0.03) 3px,rgba(0,180,255,0.03) 4px); pointer-events:none; }
-@keyframes holoFlicker { 0%,100%{box-shadow:0 0 20px rgba(0,180,255,0.2),inset 0 0 30px rgba(0,100,200,0.1)} 15%{box-shadow:0 0 8px rgba(0,180,255,0.1);opacity:0.92} 16%{box-shadow:0 0 25px rgba(0,180,255,0.3);opacity:1} 80%{opacity:0.94} 81%{opacity:1} }
+.holo-wrap { position:relative; padding:clamp(1rem,2.5vw,2rem); border:1px solid rgba(180,40,40,0.3); border-radius:8px; background:rgba(20,0,0,0.45); backdrop-filter:blur(3px); animation:holoFlicker 8s ease-in-out infinite; }
+.holo-wrap::before { content:''; position:absolute; inset:0; border-radius:8px; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,30,30,0.025) 3px,rgba(255,30,30,0.025) 4px); pointer-events:none; }
+@keyframes holoFlicker {
+  0%,100%{box-shadow:0 0 20px rgba(255,42,42,0.15),0 0 60px rgba(255,42,42,0.05),inset 0 0 30px rgba(180,0,0,0.08)}
+  15%{box-shadow:0 0 8px rgba(255,42,42,0.08);opacity:0.92}
+  16%{box-shadow:0 0 28px rgba(255,42,42,0.25);opacity:1}
+  80%{opacity:0.94} 81%{opacity:1}
+}
 
 .badge { display:inline-block; background:rgba(255,30,30,0.12); border:1px solid rgba(255,60,60,0.6); color:#ff6060; font-family:'Orbitron',sans-serif; font-weight:700; font-size:clamp(9px,1.3vw,13px); letter-spacing:0.15em; padding:5px 16px; border-radius:20px; margin-bottom:1rem; animation:badgePulse 3s ease-in-out infinite; }
 @keyframes badgePulse { 0%,100%{box-shadow:0 0 8px rgba(255,42,42,0.3)} 50%{box-shadow:0 0 22px rgba(255,42,42,0.8),0 0 44px rgba(255,42,42,0.3)} }
