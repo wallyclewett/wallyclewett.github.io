@@ -74,14 +74,17 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
 .holo-wrap::before { content:''; position:absolute; inset:0; border-radius:8px; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,180,255,0.03) 3px,rgba(0,180,255,0.03) 4px); pointer-events:none; }
 @keyframes holoFlicker { 0%,100%{box-shadow:0 0 20px rgba(0,180,255,0.2),inset 0 0 30px rgba(0,100,200,0.1)} 15%{box-shadow:0 0 8px rgba(0,180,255,0.1);opacity:0.92} 16%{box-shadow:0 0 25px rgba(0,180,255,0.3);opacity:1} 80%{opacity:0.94} 81%{opacity:1} }
 
-.badge { display:inline-block; background:rgba(255,80,180,0.15); border:1px solid rgba(255,80,180,0.5); color:#ff80d0; font-family:'StarJedi',sans-serif; font-size:clamp(9px,1.3vw,14px); letter-spacing:0.12em; padding:5px 14px; border-radius:20px; margin-bottom:1rem; animation:badgePulse 3s ease-in-out infinite; }
-@keyframes badgePulse { 0%,100%{box-shadow:0 0 8px rgba(255,80,180,0.3)} 50%{box-shadow:0 0 20px rgba(255,80,180,0.7),0 0 40px rgba(255,80,180,0.3)} }
-.subtitle { color:rgba(0,200,255,0.7); font-size:clamp(12px,1.8vw,20px); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.2rem; text-align:center; }
-.name { font-family:'Arial Black',Arial,sans-serif; font-size:clamp(58px,11vw,140px); line-height:1; letter-spacing:0.05em; color:#ffe826; margin-bottom:0.2rem; text-align:center; animation:nameGlow 2.5s ease-in-out infinite; }
-@keyframes nameGlow { 0%,100%{text-shadow:0 0 20px rgba(255,232,38,0.5),0 0 50px rgba(255,200,0,0.2)} 50%{text-shadow:0 0 40px rgba(255,232,38,1),0 0 80px rgba(255,200,0,0.5),0 0 120px rgba(255,180,0,0.3)} }
-.tagline { font-size:clamp(18px,3vw,34px); color:rgba(255,255,255,0.9); font-weight:bold; letter-spacing:0.05em; margin-bottom:0.8rem; text-align:center; animation:taglineGlow 3.5s ease-in-out infinite 0.5s; }
-@keyframes taglineGlow { 0%,100%{text-shadow:none} 50%{text-shadow:0 0 15px rgba(255,200,100,0.8)} }
-.quote { font-size:clamp(13px,1.8vw,20px); color:rgba(0,220,255,0.75); font-style:italic; margin-bottom:1rem; text-align:center; animation:quoteFade 4s ease-in-out infinite 1s; }
+.badge { display:inline-block; background:rgba(255,30,30,0.12); border:1px solid rgba(255,60,60,0.6); color:#ff6060; font-family:'Orbitron',sans-serif; font-weight:700; font-size:clamp(9px,1.3vw,13px); letter-spacing:0.15em; padding:5px 16px; border-radius:20px; margin-bottom:1rem; animation:badgePulse 3s ease-in-out infinite; }
+@keyframes badgePulse { 0%,100%{box-shadow:0 0 8px rgba(255,42,42,0.3)} 50%{box-shadow:0 0 22px rgba(255,42,42,0.8),0 0 44px rgba(255,42,42,0.3)} }
+.subtitle { color:rgba(0,200,255,0.7); font-family:'Exo 2',sans-serif; font-size:clamp(12px,1.8vw,20px); letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.2rem; text-align:center; }
+.name { font-family:'Orbitron',sans-serif; font-weight:900; font-size:clamp(46px,9vw,120px); line-height:1; letter-spacing:0.03em; color:#ffe826; margin-bottom:0.2rem; text-align:center; animation:nameGlow 2.5s ease-in-out infinite; }
+@keyframes nameGlow {
+  0%,100%{text-shadow:0 0 20px rgba(255,232,38,0.5),0 0 50px rgba(255,200,0,0.2),0 0 2px rgba(255,80,80,0.3)}
+  50%{text-shadow:0 0 40px rgba(255,232,38,1),0 0 80px rgba(255,200,0,0.6),0 0 120px rgba(255,42,42,0.4),0 0 160px rgba(255,42,42,0.15)}
+}
+.tagline { font-family:'Exo 2',sans-serif; font-weight:600; font-size:clamp(18px,3vw,32px); color:rgba(255,255,255,0.92); letter-spacing:0.06em; margin-bottom:0.8rem; text-align:center; animation:taglineGlow 3.5s ease-in-out infinite 0.5s; }
+@keyframes taglineGlow { 0%,100%{text-shadow:none} 50%{text-shadow:0 0 18px rgba(255,200,100,0.9)} }
+.quote { font-family:'Exo 2',sans-serif; font-style:italic; font-size:clamp(13px,1.8vw,19px); color:rgba(0,220,255,0.75); margin-bottom:1rem; text-align:center; animation:quoteFade 4s ease-in-out infinite 1s; }
 @keyframes quoteFade { 0%,100%{opacity:0.75} 50%{opacity:1;color:rgba(0,240,255,0.95)} }
 
 .saber-divider { height:3px; margin-bottom:1rem; position:relative; background:linear-gradient(to right,transparent,#00e5ff 20%,#fff 50%,#00e5ff 80%,transparent); animation:saberFlicker 3s ease-in-out infinite; border-radius:2px; }
