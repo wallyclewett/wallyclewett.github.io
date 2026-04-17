@@ -514,6 +514,61 @@ function startMusic() {
 }
 setTimeout(() => { try { startMusic(); } catch(e) { document.getElementById('playBtn').style.display = 'block'; } }, 400);
 document.addEventListener('click', startMusic, { once: true });
+
+// ── YODA BORDER PATROL ──
+(function() {
+  const yoda = document.querySelector('.yoda-wrap');
+  const holo = document.querySelector('.holo-wrap');
+  const invite = document.querySelector('.invite');
+  const YODA_W = 90;
+  const SPEED = 0.5;
+  let progress = 0;
+
+  function patrol() {
+    const hr = holo.getBoundingClientRect();
+    const ir = invite.getBoundingClientRect();
+    const top  = hr.top  - ir.top;
+    const left = hr.left - ir.left;
+    const w    = hr.width;
+    const h    = hr.height;
+    const perimeter = 2 * (w + h);
+
+    progress = (progress + SPEED) % perimeter;
+    let x, y, flipX = false, rot = 0;
+
+    if (progress < w) {
+      // Top edge → right
+      x = left + progress;
+      y = top;
+      flipX = false; rot = 0;
+    } else if (progress < w + h) {
+      // Right edge → down
+      x = left + w;
+      y = top + (progress - w);
+      flipX = false; rot = 90;
+    } else if (progress < 2 * w + h) {
+      // Bottom edge → left
+      x = left + w - (progress - w - h);
+      y = top + h;
+      flipX = true; rot = 0;
+    } else {
+      // Left edge → up
+      x = left;
+      y = top + h - (progress - 2 * w - h);
+      flipX = false; rot = -90;
+    }
+
+    // Center Yoda on the border point, feet touching line
+    yoda.style.left = (x - YODA_W / 2) + 'px';
+    yoda.style.top  = (y - YODA_W) + 'px';
+    yoda.style.transform = `scaleX(${flipX ? -1 : 1}) rotate(${rot}deg)`;
+    yoda.style.transformOrigin = '50% 100%';
+
+    requestAnimationFrame(patrol);
+  }
+
+  patrol();
+})();
 </script>
 </body>
 </html>
