@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remi Clewett's Birthday Sleepover</title>
+<title>Master Remi's Sleepover</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -54,7 +54,8 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
 .death-star img { width:100%; filter:drop-shadow(-4px 0 30px rgba(100,150,255,0.5)); }
 
 /* Yoda */
-.yoda-wrap { position:absolute; width:90px; z-index:6; pointer-events:none; }
+.yoda-wrap { position:absolute; right:0; bottom:0; width:min(40%,420px); z-index:4; animation:yodaFloat 8s ease-in-out infinite; }
+@keyframes yodaFloat { 0%{transform:translate(0,0) rotate(0deg)} 20%{transform:translate(-30px,-20px) rotate(-2deg)} 40%{transform:translate(20px,-40px) rotate(1.5deg)} 60%{transform:translate(-15px,-15px) rotate(-1deg)} 80%{transform:translate(25px,-30px) rotate(2deg)} 100%{transform:translate(0,0) rotate(0deg)} }
 .yoda-wrap img { width:100%; animation:yodaGlow 8s ease-in-out infinite; }
 @keyframes yodaGlow { 0%,100%{filter:drop-shadow(-8px 0 20px rgba(100,60,255,0.6))} 40%{filter:drop-shadow(-8px 0 35px rgba(255,80,200,0.7))} 70%{filter:drop-shadow(-8px 0 25px rgba(80,200,255,0.6))} }
 
@@ -150,9 +151,9 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
   <div id="crawl-vp">
     <div id="crawl-text">
       <div class="crawl-ep">Episode IX</div>
-      <div class="crawl-title">REMI CLEWETT'S<br>SLEEPOVER</div>
+      <div class="crawl-title">MASTER REMI'S<br>SLEEPOVER</div>
       <div class="crawl-body">
-        <p>It is a time of great celebration across the galaxy. Young REMI CLEWETT is turning 9, and forces of fun are gathering on the Sunshine Coast.</p>
+        <p>It is a time of great celebration across the galaxy. Young MASTER REMI is turning 9, and forces of fun are gathering on the Sunshine Coast.</p>
         <p>In a daring mission to defeat bedtime, rebel friends have been summoned to 25 Lomandra Drive, Currimundi for the greatest sleepover the galaxy has ever seen.</p>
         <p>The Jedi Master YODA himself has left his swamp to attend, arriving via skateboard at 3pm on Friday the 23rd of May.</p>
         <p>Sleeping bags are required. Sleeping is optional. RSVP to Wally on 0459 925 007 before the 16th of May, you must.</p>
@@ -186,7 +187,7 @@ body { min-height:100vh; background:#000; margin:0; font-family:'Exo 2',Arial,sa
     <div class="holo-wrap">
       <div class="badge">Jedi Mission Briefing</div>
       <p class="subtitle">You're invited to</p>
-      <div class="name">REMI<br>CLEWETT'S</div>
+      <div class="name">MASTER<br>REMI'S</div>
       <div class="tagline">Birthday Sleepover! 🌙</div>
       <div class="quote">"Sleep, you will not. Fun, there will be." — Yoda, probably</div>
       <div class="saber-divider"></div>
