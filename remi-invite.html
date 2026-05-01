@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Transmission from Commander Remi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: oklch(0.10 0.025 285);
+    --bg-deep: oklch(0.06 0.02 285);
+    --panel: oklch(0.14 0.04 290);
+    --line: oklch(0.28 0.05 290);
+    --ink: oklch(0.97 0.01 285);
+    --ink-dim: oklch(0.72 0.02 285);
+    --mag: oklch(0.72 0.26 340);
+    --mag-soft: oklch(0.55 0.22 340);
+    --cyan: oklch(0.82 0.16 200);
+    --cyan-soft: oklch(0.62 0.16 200);
+    --warn: oklch(0.85 0.18 90);
+    --display: 'Orbitron', system-ui, sans-serif;
+    --body: 'Space Grotesk', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg-deep);
+    color: var(--ink);
+    font-family: var(--body);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  #app { position: relative; z-index: 1; }
+  /* starfield base layer */
+  .starfield {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 30% 20%, oklch(0.25 0.15 340 / 0.35), transparent 55%),
+      radial-gradient(ellipse at 75% 80%, oklch(0.28 0.14 200 / 0.30), transparent 50%),
+      var(--bg-deep);
+  }
+  .stars-layer { position: absolute; inset: 0; }
+  .stars-layer.gradient-only { display: none; }
+  .stars-layer.solid-only { background: var(--bg-deep); }
+  body.bg-gradient .stars-layer.stars { display: none; }
+  body.bg-gradient .stars-layer.gradient-only { display: block; background:
+    radial-gradient(ellipse at 25% 15%, oklch(0.32 0.20 340 / 0.55), transparent 60%),
+    radial-gradient(ellipse at 80% 85%, oklch(0.32 0.18 200 / 0.50), transparent 55%); }
+  body.bg-solid .starfield { background: var(--bg-deep); }
+  body.bg-solid .stars-layer.stars { display: none; }
+
+  @media print {
+    body { background: white; color: black; }
+    .starfield, .tweaks-panel, .sound-toggle, .intro-reveal { display: none !important; }
+    #app { color: black; }
+  }
+</style>
+</head>
+<body>
+<div class="starfield" aria-hidden="true">
+  <div class="stars-layer stars" id="stars"></div>
+  <div class="stars-layer gradient-only"></div>
+</div>
+<div id="app"></div>
+
+<script>
+  // EDITMODE block — Tweaks defaults persisted to disk
+  window.__TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "name": "Remi",
+    "date": "2026-05-23",
+    "startTime": "16:00",
+    "endTime": "11:00",
+    "address": "25 Lomandra Drive, Currimundi",
+    "bgStyle": "stars",
+    "mascot": "photo",
+    "rsvpEnabled": true,
+    "rsvpPhone": "+447700900000"
+  }/*EDITMODE-END*/;
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="sections.jsx"></script>
+<script type="text/babel" src="main.jsx"></script>
+</body>
+</html>
