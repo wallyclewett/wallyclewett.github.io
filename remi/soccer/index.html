@@ -15,8 +15,8 @@
     --pitch-stripe: #0c5e2f;
     --chalk: #ffffff;
     --bone: #f5f3e9;
-    --accent: #ffd60a;        /* electric yellow */
-    --accent-2: #ff7a1a;       /* orange flare */
+    --accent: #ffd60a;
+    --accent-2: #ff7a1a;
     --ink: #0a1f12;
   }
 
@@ -33,7 +33,6 @@
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
   }
-  /* Top-down pitch — fills the entire scrollable page */
   .pitch {
     position: absolute;
     inset: 0;
@@ -78,7 +77,6 @@
   @keyframes pdraw { to { stroke-dashoffset: 0; } }
   @keyframes spot-in { to { opacity: 1; } }
 
-  /* Goal posts + nets */
   .goal {
     position: absolute;
     left: 50%;
@@ -95,7 +93,6 @@
   @keyframes goal-in { to { opacity: 1; } }
   .goal svg { width: 100%; height: 100%; display: block; }
 
-  /* Stadium light flicker overlay */
   .stadium-glow {
     position: fixed;
     inset: 0;
@@ -115,12 +112,6 @@
     72% { opacity: 0.8; }
   }
 
-  /* Pitch markings — subtle white lines */
-  .pitch-lines {
-    display: none;
-  }
-
-  /* Confetti / goal-net burst */
   .burst {
     position: fixed;
     inset: 0;
@@ -151,7 +142,6 @@
     padding: 28px 20px 64px;
   }
 
-  /* ====================== HERO ====================== */
   .hero {
     text-align: center;
     padding: 36px 8px 24px;
@@ -194,7 +184,6 @@
     to { opacity: 1; transform: translateY(0) skewY(0); }
   }
 
-  /* Soccer ball — fixed to viewport, flies anywhere on screen */
   .ball-x {
     position: fixed;
     top: 0;
@@ -231,7 +220,6 @@
   @keyframes hint-in { to { opacity: 1; } }
   @keyframes hint-fade { to { opacity: 0; } }
 
-  /* Juggle scoreboard — top-left, JS-driven */
   .juggle-board {
     position: fixed;
     top: 14px;
@@ -294,7 +282,6 @@
     60% { transform: translateX(-3px); }
     80% { transform: translateX(2px); }
   }
-  .ball-x.lit { opacity: 1; }
   .ball-y {
     width: 100%;
     height: 100%;
@@ -313,7 +300,6 @@
     display: block;
     border-radius: 50%;
   }
-  /* Static highlight overlay — fixed lighting, doesn't rotate */
   .ball-x::after {
     content: "";
     position: absolute;
@@ -327,7 +313,6 @@
 
   .ball-shadow, .ball-shadow-inner { display: none; }
 
-  /* ====================== JERSEY 9 ====================== */
   .turns-block {
     text-align: center;
     margin-top: 14px;
@@ -399,7 +384,6 @@
     100% { opacity: 1; transform: scale(1) rotate(-2deg); }
   }
 
-  /* ====================== DESCRIPTION ====================== */
   .description {
     margin: 36px auto 0;
     max-width: 460px;
@@ -414,7 +398,6 @@
   }
   .description strong { color: var(--accent); font-weight: 700; }
 
-  /* ====================== FIXTURE CARD ====================== */
   .fixture {
     margin: 32px 0 0;
     background: var(--bone);
@@ -461,9 +444,7 @@
     gap: 14px;
     align-items: center;
   }
-  .team {
-    text-align: center;
-  }
+  .team { text-align: center; }
   .team .crest {
     width: 56px;
     height: 56px;
@@ -478,10 +459,7 @@
     border: 3px solid var(--ink);
     box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2);
   }
-  .team .crest.away {
-    background: var(--accent);
-    color: var(--ink);
-  }
+  .team .crest.away { background: var(--accent); color: var(--ink); }
   .team .name {
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.08em;
@@ -510,11 +488,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px 14px;
   }
-  .meta-row {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+  .meta-row { display: flex; flex-direction: column; gap: 2px; }
   .meta-row .label {
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.2em;
@@ -529,7 +503,6 @@
   }
   .meta-row.full { grid-column: 1 / -1; }
 
-  /* ====================== TEAM SHEET RSVP ====================== */
   .teamsheet {
     margin: 28px 0 0;
     background: rgba(0,0,0,0.45);
@@ -552,15 +525,8 @@
     align-items: baseline;
     border-bottom: 4px solid var(--accent);
   }
-  .teamsheet-head h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 400;
-  }
-  .teamsheet-head .seq {
-    font-size: 12px;
-    color: rgba(0,0,0,0.55);
-  }
+  .teamsheet-head h2 { margin: 0; font-size: 22px; font-weight: 400; }
+  .teamsheet-head .seq { font-size: 12px; color: rgba(0,0,0,0.55); }
 
   form {
     padding: 18px 16px 20px;
@@ -576,11 +542,7 @@
     color: var(--accent);
     margin-bottom: 6px;
   }
-  .field label .opt {
-    color: rgba(255,255,255,0.5);
-    margin-left: 6px;
-    font-size: 11px;
-  }
+  .field label .opt { color: rgba(255,255,255,0.5); margin-left: 6px; font-size: 11px; }
   .field input[type="text"],
   .field textarea {
     width: 100%;
@@ -595,21 +557,15 @@
     outline: none;
     transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
   }
-  .field textarea {
-    min-height: 84px;
-    resize: vertical;
-  }
+  .field textarea { min-height: 84px; resize: vertical; }
   .field input[type="text"]:focus,
   .field textarea:focus {
     border-color: var(--accent);
     background: rgba(255,255,255,0.1);
     box-shadow: 0 0 0 3px rgba(255,214,10,0.18);
   }
-  .field input::placeholder, .field textarea::placeholder {
-    color: rgba(255,255,255,0.4);
-  }
+  .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.4); }
 
-  /* Match-result toggle */
   .scoreboard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -642,29 +598,14 @@
     font-size: 11px;
     color: rgba(255,255,255,0.6);
   }
-  .scoreboard input:checked + label.choice {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
+  .scoreboard input:checked + label.choice { background: var(--accent); border-color: var(--accent); }
   .scoreboard input:checked + label.choice .big,
-  .scoreboard input:checked + label.choice .small {
-    color: var(--ink);
-  }
-  .scoreboard input:focus-visible + label.choice {
-    box-shadow: 0 0 0 3px rgba(255,214,10,0.4);
-  }
-  .scoreboard label.choice.no .big::before {
-    content: "L";
-  }
-  .scoreboard label.choice.yes .big::before {
-    content: "W";
-  }
+  .scoreboard input:checked + label.choice .small { color: var(--ink); }
+  .scoreboard input:focus-visible + label.choice { box-shadow: 0 0 0 3px rgba(255,214,10,0.4); }
+  .scoreboard label.choice.no .big::before { content: "L"; }
+  .scoreboard label.choice.yes .big::before { content: "W"; }
 
-  .submit-wrap {
-    margin-top: 4px;
-    display: grid;
-    gap: 10px;
-  }
+  .submit-wrap { margin-top: 4px; display: grid; gap: 10px; }
   button.submit {
     appearance: none;
     border: none;
@@ -688,10 +629,7 @@
     transform: translateY(4px);
     box-shadow: 0 2px 0 #b8970a, 0 6px 14px rgba(0,0,0,0.4);
   }
-  button.submit .arrow {
-    display: inline-block;
-    transition: transform 0.18s;
-  }
+  button.submit .arrow { display: inline-block; transition: transform 0.18s; }
   button.submit:hover .arrow { transform: translateX(4px); }
 
   .submit-note {
@@ -717,7 +655,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.001s !important;
@@ -726,7 +663,6 @@
     }
   }
 
-  /* Wider screens — keep mobile feel but center nicely */
   @media (min-width: 720px) {
     main { padding-top: 48px; }
     .invited { font-size: 120px; }
@@ -740,37 +676,24 @@
 <div class="pitch" aria-hidden="true">
   <div class="pitch-stripes"></div>
   <svg class="markings" preserveAspectRatio="none" viewBox="0 0 400 1200">
-    <!-- Outer touchlines -->
     <rect class="line" x="14" y="14" width="372" height="1172" rx="2"/>
-    <!-- Halfway line -->
     <line class="line delay" x1="14" y1="600" x2="386" y2="600"/>
-    <!-- Center circle + spot -->
     <circle class="line delay" cx="200" cy="600" r="74"/>
     <circle class="spot" cx="200" cy="600" r="3"/>
-    <!-- Top penalty area -->
     <rect class="line" x="80" y="14" width="240" height="120"/>
-    <!-- Top six-yard box -->
     <rect class="line delay" x="140" y="14" width="120" height="44"/>
-    <!-- Top penalty spot -->
     <circle class="spot" cx="200" cy="92" r="3"/>
-    <!-- Top D (penalty arc) -->
     <path class="line delay" d="M 156,134 A 50 50 0 0 0 244 134"/>
-    <!-- Bottom penalty area -->
     <rect class="line" x="80" y="1066" width="240" height="120"/>
-    <!-- Bottom six-yard box -->
     <rect class="line delay" x="140" y="1142" width="120" height="44"/>
-    <!-- Bottom penalty spot -->
     <circle class="spot" cx="200" cy="1108" r="3"/>
-    <!-- Bottom D -->
     <path class="line delay" d="M 156,1066 A 50 50 0 0 1 244 1066"/>
-    <!-- Corner arcs -->
     <path class="line delay" d="M 14,22 A 8 8 0 0 0 22 14"/>
     <path class="line delay" d="M 378,14 A 8 8 0 0 0 386 22"/>
     <path class="line delay" d="M 14,1178 A 8 8 0 0 1 22 1186"/>
     <path class="line delay" d="M 378,1186 A 8 8 0 0 1 386 1178"/>
   </svg>
 
-  <!-- Top goal -->
   <div class="goal top">
     <svg viewBox="0 0 280 60" preserveAspectRatio="none">
       <defs>
@@ -786,7 +709,6 @@
       <line x1="34" y1="52" x2="246" y2="52" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
     </svg>
   </div>
-  <!-- Bottom goal (mirrored) -->
   <div class="goal bottom">
     <svg viewBox="0 0 280 60" preserveAspectRatio="none">
       <defs>
@@ -806,7 +728,6 @@
 
 <div class="burst" id="burst" aria-hidden="true"></div>
 
-<!-- Juggle scoreboard -->
 <div class="juggle-board" id="juggle-board" aria-live="polite">
   <span class="label">JUGGLES</span>
   <span class="count" id="juggle-count">0</span>
@@ -879,10 +800,10 @@
     </div>
   </section>
 
-  <p class="description">
+  <p class="description" style="font-weight: 900">
     Loads of <strong>games on the pitch</strong>, siblings welcome to jump in,
     and plenty of room for parents to kick back, chat, and soak up the sunshine.
-    It&rsquo;s a family arvo — come hungry, wear something you can run in.
+    Food&rsquo;s sorted for the kids, and parents are welcome to stick around or drop and run, totally up to you. Come hungry, wear something you can run in.
   </p>
 
   <section class="fixture" aria-label="Match details">
@@ -906,7 +827,7 @@
     <div class="fixture-meta">
       <div class="meta-row">
         <span class="label">Kick-off</span>
-        <span class="value">Sun 24 Mar &middot; 11:00 AM</span>
+        <span class="value">Sun 24 Mar · 10:00 AM - 12:00PM</span>
       </div>
       <div class="meta-row">
         <span class="label">Format</span>
@@ -972,7 +893,6 @@
 </main>
 
 <script>
-  // === Confetti burst on load ===
   (function makeBurst() {
     const burst = document.getElementById('burst');
     if (!burst) return;
@@ -1002,7 +922,6 @@
     setTimeout(() => burst.remove(), 4000);
   })();
 
-  // === Ball physics + juggle game ===
   (function ballPhysics() {
     const ballX = document.querySelector('.ball-x');
     const ballY = document.querySelector('.ball-y');
@@ -1063,7 +982,6 @@
       return;
     }
 
-    // Synthesize kick sound
     let audioCtx = null;
     function ensureAudio() {
       if (audioCtx) return audioCtx;
@@ -1092,7 +1010,6 @@
       osc.connect(gain).connect(ctx.destination);
       osc.start(t0);
       osc.stop(t0 + dur + 0.02);
-
       const bufferSize = Math.floor(ctx.sampleRate * 0.04);
       const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const data = buffer.getChannelData(0);
@@ -1149,7 +1066,6 @@
 
     let lastT = null;
     let started = false;
-    let inAir = true;
     const startDelay = 1400;
 
     function step(t) {
@@ -1192,9 +1108,6 @@
           vx *= 0.9;
           if (Math.abs(vx) < 30) vx = (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 30);
         }
-        inAir = false;
-      } else {
-        inAir = true;
       }
 
       const circumference = Math.PI * BALL;
@@ -1222,6 +1135,7 @@
         setTimeout(playMilestone, 80);
       }
     }
+
     function nudge(clientX, clientY) {
       const bx = x + BALL / 2;
       const by = y + BALL / 2;
@@ -1258,7 +1172,6 @@
     });
   })();
 
-  // === RSVP submit -> sms: ===
   const form = document.getElementById('rsvp-form');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -1289,12 +1202,10 @@
       "Message: " + message
     ];
     const body = lines.join('\n');
-
     const phone = '+61459925007';
     const ua = navigator.userAgent || '';
     const sep = /iPhone|iPad|iPod|Macintosh/i.test(ua) ? '&' : '?';
     const href = 'sms:' + phone + sep + 'body=' + encodeURIComponent(body);
-
     window.location.href = href;
   });
 
